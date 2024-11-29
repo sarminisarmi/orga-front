@@ -64,8 +64,8 @@
 //     );
 // }
 
-
 import React from 'react';
+import { Container, Row, Col, Card } from 'react-bootstrap';
 import { FaLeaf, FaUsers, FaLightbulb } from 'react-icons/fa';
 
 const About = () => {
@@ -73,23 +73,22 @@ const About = () => {
     aboutPage: {
       fontFamily: 'Arial, sans-serif',
       color: '#333',
-      fontSize:'10px',
-      backgroundColor: '#F5F5F5',
-      padding: '2rem 0',
+      fontSize: '18px',
+      backgroundColor: '#F1F8E9',
+      padding: '8rem 0',
     },
     aboutHeader: {
-      backgroundColor: '#765827',
-      color: '#ffff',
+      backgroundColor: '#4CAF50',
+      color: '#FFFFFF',
       padding: '4rem 2rem',
       textAlign: 'center',
       borderRadius: '0 0 50% 50%',
       marginBottom: '4rem',
     },
     headerTitle: {
-      fontSize: '2.5rem',
-      marginBottom: '1rem',
-      fontFamily: 'serif',
-
+      fontSize: '3rem',
+      marginBottom: '4rem',
+      fontFamily: '"Titan One", sans-serif',
     },
     headerDescription: {
       fontSize: '1.5rem',
@@ -97,67 +96,102 @@ const About = () => {
       margin: '0 auto',
     },
     valuesSection: {
-      display: 'flex',
-      flexWrap: 'wrap',
-      justifyContent: 'center',
-      gap: '2rem',
-      padding: '0 2rem',
+      padding: '0 7rem',
+      margin:'0 auto',
     },
     valueCard: {
-      backgroundColor: '#FFFFFF',
-      borderRadius: '10px',
-      padding: '2rem',
+      backgroundColor: '#d4d4d4',
+      borderRadius: '65px',
       textAlign: 'center',
-      maxWidth: '300px',
+      height: '100%',
+      width:'80%',
+      padding: '1.5rem 5rem',
       boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-      transition: 'all 0.3s ease, transform 0.3s ease',
-      ':hover': {
-        transform: 'translateY(-15px) scale(1.05)', // Make the card slightly larger on hover
-        boxShadow: '0 6px 15px rgba(0, 0, 0, 0.2)', // Increase shadow for more emphasis
-      },
-   },
-   
-    
+      transition: 'all 0.3s ease',
+      cursor: 'pointer',
+      margin:'0 auto',
+
+    },
     valueIcon: {
-      fontSize: '3rem',
-      color: '#65451F',
+      fontSize: '4rem',
+      color: '#8BC34A',
       marginBottom: '1rem',
     },
     valueTitle: {
-      fontSize: '1.9rem',
-      color: '#65451F',
+      fontSize: '2rem',
+      color: '#33691E',
       marginBottom: '1rem',
+      fontWeight: 'bold'
+      
     },
     valueDescription: {
-      fontSize: '1.3rem',
+      fontSize: '1.5rem',
       color: '#333',
     },
   };
 
+  const cardHoverStyle = {
+    transform: 'translateY(-10px)',
+    boxShadow: '0 6px 12px rgba(0, 0, 0, 0.15)',
+  };
+
   return (
     <div style={styles.aboutPage}>
-      <section style={styles.aboutHeader}>
-        <h2 style={styles.headerTitle}>About Our Company</h2>
-        <p style={styles.headerDescription}>We're passionate about creating sustainable solutions for a greener future.</p>
-      </section>
+      <Container fluid>
+        <Row>
+          <Col>
+            <section style={styles.aboutHeader}>
+              <h2 style={styles.headerTitle}>About Our Company</h2>
+              <p style={styles.headerDescription}>We're passionate about creating sustainable solutions for a greener future.</p>
+            </section>
+          </Col>
+        </Row>
 
-      <section style={styles.valuesSection}>
-        <div style={styles.valueCard}>
-          <FaLeaf style={styles.valueIcon} />
-          <h3 style={styles.valueTitle}>Eco-Friendly</h3>
-          <p style={styles.valueDescription}>Our products are designed with the environment in mind.</p>
-        </div>
-        <div style={styles.valueCard}>
-          <FaUsers style={styles.valueIcon} />
-          <h3 style={styles.valueTitle}>Community-Driven</h3>
-          <p style={styles.valueDescription}>We believe in the power of collective action for change.</p>
-        </div>
-        <div style={styles.valueCard}>
-          <FaLightbulb style={styles.valueIcon} />
-          <h3 style={styles.valueTitle}>Innovative</h3>
-          <p style={styles.valueDescription}>Constantly pushing boundaries to create better solutions.</p>
-        </div>
-      </section>
+        <Row style={styles.valuesSection}>
+          <Col md={4} className="mb-4">
+            <Card 
+              style={styles.valueCard} 
+              className="h-100"
+              onMouseEnter={(e) => Object.assign(e.currentTarget.style, cardHoverStyle)}
+              onMouseLeave={(e) => Object.assign(e.currentTarget.style, styles.valueCard)}
+            >
+              <Card.Body>
+                <FaLeaf style={styles.valueIcon} />
+                <Card.Title style={styles.valueTitle}>Eco-Friendly</Card.Title>
+                <Card.Text style={styles.valueDescription}>Our products are designed with the environment in mind.</Card.Text>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col md={4} className="mb-4">
+            <Card 
+              style={styles.valueCard} 
+              className="h-100"
+              onMouseEnter={(e) => Object.assign(e.currentTarget.style, cardHoverStyle)}
+              onMouseLeave={(e) => Object.assign(e.currentTarget.style, styles.valueCard)}
+            >
+              <Card.Body>
+                <FaUsers style={styles.valueIcon} />
+                <Card.Title style={styles.valueTitle}>Community-Driven</Card.Title>
+                <Card.Text style={styles.valueDescription}>We believe in the power of collective action for change.</Card.Text>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col md={4} className="mb-4">
+            <Card 
+              style={styles.valueCard} 
+              className="h-100"
+              onMouseEnter={(e) => Object.assign(e.currentTarget.style, cardHoverStyle)}
+              onMouseLeave={(e) => Object.assign(e.currentTarget.style, styles.valueCard)}
+            >
+              <Card.Body>
+                <FaLightbulb style={styles.valueIcon} />
+                <Card.Title style={styles.valueTitle}>Innovative</Card.Title>
+                <Card.Text style={styles.valueDescription}>Constantly pushing boundaries to create better solutions.</Card.Text>
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 };

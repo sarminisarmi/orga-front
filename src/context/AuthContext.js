@@ -14,8 +14,9 @@ export const AuthProvider = ({ children }) => {
   };
 
   const logoutUser = () => {
-    setUser(null);
-    sessionStorage.removeItem('user');
+    // Clear sessionStorage
+    sessionStorage.clear();
+    setUser(null); // Clear user state
   };
 
   return (
@@ -25,3 +26,34 @@ export const AuthProvider = ({ children }) => {
   );
 };
 
+// import React, { createContext, useState } from 'react';
+// import { useNavigate } from 'react-router-dom';
+
+// export const AuthContext = createContext();
+
+// export const AuthProvider = ({ children }) => {
+//   const [user, setUser] = useState(null);
+//   const navigate = useNavigate();
+
+//   const loginUser = (userData) => {
+//     setUser(userData);
+//     sessionStorage.setItem('token', userData.token); // Save token to sessionStorage
+//   };
+
+//   const logoutUser = () => {
+//     // Clear sessionStorage and localStorage
+//     sessionStorage.removeItem('token');
+//     sessionStorage.clear();
+//     localStorage.clear();
+
+//     // Reset user and redirect
+//     setUser(null);
+//     navigate('/login');
+//   };
+
+//   return (
+//     <AuthContext.Provider value={{ user, loginUser, logoutUser }}>
+//       {children}
+//     </AuthContext.Provider>
+//   );
+// };

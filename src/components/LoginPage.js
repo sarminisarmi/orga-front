@@ -7,9 +7,9 @@ import { ToastContainer, toast } from 'react-toastify'; // Import ToastContainer
 import 'react-toastify/dist/ReactToastify.css'; // Import Toastify CSS
 
 const Login = () => {
-  const [email, setEmail] = useState('');  
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const { login } = useContext(AuthContext);  
+  const { loginUser } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
@@ -17,12 +17,29 @@ const Login = () => {
     try {
       const res = await axios.post('/login', { email, password });
       const { token, role } = res.data;
+
+      // Save token, role, and email to sessionStorage
       sessionStorage.setItem('token', token);
       sessionStorage.setItem('role', role);
       sessionStorage.setItem('email', email);
 
-      // Display success toast and navigate based on the role
+      // Update AuthContext
+      loginUser({ email, role });
+
+      // Display success toast
       toast.success('Login successful!');
+
+      // Check for post-login redirection
+      const postLoginAction = sessionStorage.getItem("redirectAfterLogin");
+      if (postLoginAction) {
+        const { action } = JSON.parse(postLoginAction);
+        if (action === "addToCart") {
+          navigate("/product"); // Redirect to MenuPage
+          return; // Exit to prevent further navigation
+        }
+      }
+
+      // Navigate based on role if no post-login action
       if (role === 'admin') {
         navigate('/Dashboard');
       } else if (role === 'user') {
@@ -33,6 +50,8 @@ const Login = () => {
       toast.error(`Login failed: ${errorMessage}`);
     }
   };
+
+
 
   return (
     <div className="wrapper">
@@ -79,7 +98,7 @@ const Login = () => {
           <p>Don't have an account? <Link to="/register">Register here</Link></p>
         </div>
       </div>
-      
+
       {/* Toast Container */}
       <ToastContainer position="top-center" autoClose={3000} hideProgressBar={false} closeOnClick pauseOnHover draggable />
     </div>

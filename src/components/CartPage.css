@@ -115,7 +115,7 @@
   /* background-color: ; Light Yellow */
   color: #765827; /* Dark Green */
   font-family: Arial, sans-serif;
-  padding: 70px;
+  padding: 120px;
 }
 
 .cart-title {
@@ -127,8 +127,9 @@
 
 .cart-items-title {
   color: #65451F; /* Green */
-  font-size: 1.8rem;
+  font-size: 2rem;
   margin-bottom: 20px;
+  font-weight: bold;
 }
 
 /* Table Styling */
@@ -139,19 +140,19 @@
 }
 
 .cart-table th, .cart-table td {
-  border: 1px solid #765827; /* Beige */
+  border: 1px solid #4CAF50; /* Beige */
   padding: 15px;
   text-align: center;
 }
 
 .cart-table th {
-  background-color: #A28B55; /* Dark Green */
-  color: #FFF; /* White */
+  background-color: #4CAF50; /* Dark Green */
+  color: #fff; /* White */
   font-weight: bold;
 }
 
 .cart-table td {
-  background-color: #C8AE7D; /* Light Green (Complementing Beige) */
+  background-color: #fff; /* Light Green (Complementing Beige) */
 }
 
 /* Button Styling */
@@ -164,24 +165,24 @@ button {
 }
 
 button:hover {
-  background-color: #D7C37A; /* Beige */
-  color:#A28B55 ;
+  background-color: #4CAF50; /* Beige */
+  color:#fff ;
 }
 
 .checkout-btn {
-  background-color: #FFDC7F; /* Beige */
-  color: #765827; /* Dark Green */
+  background-color: #4CAF50; /* Beige */
+  color: #fff; /* Dark Green */
   font-size: 1.2rem;
   padding: 10px 20px;
-  border: 2px solid #765827;
+  border: 2px solid #388E3C;
   border-radius: 5px;
   display: block;
   margin: 20px auto;
 }
 
 .checkout-btn:hover {
-  background-color: #C9B07D; 
-  color: #1B8057;
+  background-color: #4CAF50; 
+  /* color: #1B8057; */
 }
 
 /* Cart Totals Styling */
@@ -195,13 +196,15 @@ button:hover {
 .cart-totals-title {
   font-size: 1.5rem;
   color: #65451F; /* Dark Green */
+  font-weight: bold;
 }
 
 .cart-subtotal, .cart-total {
   display: flex;
   justify-content: space-between;
   padding: 10px 0;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
+  font-weight: bold;
   color: #65451F;
 }
 
@@ -212,7 +215,8 @@ button:hover {
 .quantity {
   width: 30px; /* Adjust size as needed */
   height: 30px; /* Adjust size as needed */
-  font-size: 18px; /* Adjust size as needed */
+  font-size: 18px; 
+  font-weight: bold;
 }
 
 .quantity-display {

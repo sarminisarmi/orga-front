@@ -231,24 +231,25 @@
 
 
 import React from 'react';
-import farmer from '/home/uki-jaffna/Documents/orga3/my-orga-frontend/src/img/A farmer.jpeg'; // Corrected path
-import hero18 from '/home/uki-jaffna/Documents/orga3/my-orga-frontend/src/img/hero18.jpeg'; // Corrected path
-import hero10 from '/home/uki-jaffna/Documents/orga3/my-orga-frontend/src/img/hero10.jpeg'; // Corrected path
-import gardenerImage from '/home/uki-jaffna/Documents/orga3/my-orga-frontend/src/img/farmer.jpeg'; // Corrected path
+import farmer from '../../src/img/A farmer.jpeg'; // Corrected path
+import hero18 from '../../src/img/hero18.jpeg'; // Corrected path
+import hero10 from '../../src/img/hero10.jpeg'; // Corrected path
+import gardenerImage from '../../src/img/farmer.jpeg'; // Corrected path
+import { FaSeedling, FaShippingFast, FaLightbulb, FaVideo } from "react-icons/fa";
 
 const App = () => {
   return (
-    <div style={{ maxWidth: '1200px', margin: 'auto', padding: '20px', fontFamily: 'Arial, sans-serif' }}>
+    <div style={{ maxWidth: '1400px', margin: 'auto', padding: '60px', fontFamily: 'Arial, sans-serif' }}>
       
       {/* Main Content */}
-      <div style={{ display: 'flex', gap: '40px' }}>
+      <div style={{ display: 'flex', gap: '200px' , paddingTop:'90px'}}>
         
         {/* Image Grid */}
         <div style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(2, 1fr)',
-          gap: '20px',
-          width: '100%'
+          gap: '10px',
+          width: '120%'
         }}>
           <div><img src={farmer} alt="img1" style={{ width: '100%', borderRadius: '10px' }} /></div>
           <div><img src={hero18} alt="img2" style={{ width: '100%', borderRadius: '10px' }} /></div>
@@ -257,56 +258,70 @@ const App = () => {
         </div>
 
         {/* Benefits Section */}
-        <div style={{ width: '60%' ,padding:'30px'}}>
-          <h3 style={{ fontSize: '2rem', color: '#65451F', marginBottom: '20px',fontFamily: '"Titan One", sans-serif', }}>Benefits of Shopping with Orga</h3>
-          
-          <div style={{
-            display: 'flex',
-            alignItems: 'center',
-            marginBottom: '20px'
-          }}>
-            <span style={{ fontSize: '2rem', color: '#4CAF50', marginRight: '15px' }}>🌱</span>
-            <div>
-              <h4 style={{ margin: 0, fontSize: '1.5rem', color: '#555' }}>Organic Fertilizers</h4>
-              <p style={{ margin: '5px 0 0 0', color: '#777' }}>High-quality organic fertilizers sourced from trusted suppliers.</p>
-            </div>
-          </div>
+<div style={{ width: '80%', padding: '1px' }}>
+  <h3 style={{
+    fontSize: '3rem', color: '#388E3C', marginBottom: '40px',
+    fontFamily: '"Titan One", sans-serif',
+  }}>
+    Benefits of Shopping with Orga
+  </h3>
 
-          <div style={{
-            display: 'flex',
-            alignItems: 'center',
-            marginBottom: '20px'
-          }}>
-            <span style={{ fontSize: '2rem', color: '#4CAF50', marginRight: '15px' }}>📦</span>
-            <div>
-              <h4 style={{ margin: 0, fontSize: '1.5rem', color: '#555' }}>Fast Delivery</h4>
-              <p style={{ margin: '5px 0 0 0', color: '#777' }}>Get your products delivered to your doorstep quickly and safely.</p>
-            </div>
-          </div>
+  <div style={{
+    display: 'flex',
+    alignItems: 'center',
+    marginBottom: '20px'
+  }}>
+    <FaSeedling style={{ fontSize: '3rem', color: '#4CAF50', marginRight: '15px' }} />
+    <div>
+      <h4 style={{ margin: 0, fontSize: '1.8rem', color: '#000', fontFamily: 'var(--bs-body-font-family)',   }}>Organic Fertilizers</h4>
+      <p style={{ margin: '5px 0 0 0', color: '#777', fontSize: '1.5rem' , }}>
+        High-quality organic fertilizers sourced from trusted suppliers.
+      </p>
+    </div>
+  </div>
 
-          <div style={{
-            display: 'flex',
-            alignItems: 'center',
-            marginBottom: '20px'
-          }}>
-            <span style={{ fontSize: '2rem', color: '#4CAF50', marginRight: '15px' }}>💡</span>
-            <div>
-              <h4 style={{ margin: 0, fontSize: '1.5rem', color: '#555' }}>Expert Advice</h4>
-              <p style={{ margin: '5px 0 0 0', color: '#777' }}>Access guidance from agricultural experts on organic farming.</p>
-            </div>
-          </div>
+  <div style={{
+    display: 'flex',
+    alignItems: 'center',
+    marginBottom: '20px'
+  }}>
+    <FaShippingFast style={{ fontSize: '3rem', color: '#4CAF50', marginRight: '15px' }} />
+    <div>
+      <h4 style={{ margin: 0, fontSize: '1.8rem', color: '#000',fontFamily: 'var(--bs-body-font-family)',  }}>Fast Delivery</h4>
+      <p style={{ margin: '5px 0 0 0', color: '#777', fontSize: '1.5rem',  }}>
+        Get your products delivered to your doorstep quickly and safely.
+      </p>
+    </div>
+  </div>
 
-          <div style={{
-            display: 'flex',
-            alignItems: 'center',
-            marginBottom: '20px'
-          }}>
-            <span style={{ fontSize: '2rem', color: '#4CAF50', marginRight: '15px' }}>📹</span>
-            <div>
-              <h4 style={{ margin: 0, fontSize: '1.5rem', color: '#555' }}>1.5k+ Video Resources</h4>
-              <p style={{ margin: '5px 0 0 0', color: '#777' }}>Explore a vast library of educational content on organic farming.</p>
-            </div>
-          </div>
+  <div style={{
+    display: 'flex',
+    alignItems: 'center',
+    marginBottom: '20px'
+  }}>
+    <FaLightbulb style={{ fontSize: '3rem', color: '#4CAF50', marginRight: '15px' }} />
+    <div>
+      <h4 style={{ margin: 0, fontSize: '1.8rem', color: '#000',fontFamily: 'var(--bs-body-font-family)',  }}>Expert Advice</h4>
+      <p style={{ margin: '5px 0 0 0', color: '#777', fontSize: '1.5rem',  }}>
+        Access guidance from agricultural experts on organic farming.
+      </p>
+    </div>
+  </div>
+
+  <div style={{
+    display: 'flex',
+    alignItems: 'center',
+    marginBottom: '20px'
+  }}>
+    <FaVideo style={{ fontSize: '3rem', color: '#4CAF50', marginRight: '15px' }} />
+    <div>
+      <h4 style={{ margin: 0, fontSize: '1.8rem', color: '#000',fontFamily: 'var(--bs-body-font-family)',  }}>1.5k+ Video Resources</h4>
+      <p style={{ margin: '5px 0 0 0', color: '#777', fontSize: '1.5rem',  }}>
+        Explore a vast library of educational content on organic farming.
+      </p>
+    </div>
+  </div>
+
           
         </div>
       </div>

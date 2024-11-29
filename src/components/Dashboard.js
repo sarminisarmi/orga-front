@@ -1,15 +1,74 @@
 
-// import React, { useState } from 'react';
+
+// import React, { useState, useEffect } from 'react';
 // import { Routes, Route, Link } from 'react-router-dom';
 // import { FaUsers, FaShoppingCart, FaBox, FaEnvelope, FaTachometerAlt, FaDollarSign } from 'react-icons/fa';
+// import axios from 'axios';  // Ensure axios is set up to connect to your backend
 // import Users from '../components/users.js';
 // import Orders from '../components/Ordersmanagement.js';
 // import Product from '../components/ProductManagement.js';
 // import ContactUs from '../components/ContactUsManage.js';
 // import Payment from '../components/payments Manage.js';
+// import Navbar from '../components/Navbar.js';
+// import { AuthProvider } from '../context/AuthContext.js';
+// import { CartProvider } from '../context/cartcontextprovider';
+// import ScrollToTop from './ScrollToTop.js';
+
 
 // const AdminDashboard = ({ isAdmin = true }) => {
 //   const [activeTab, setActiveTab] = useState('dashboard');
+//   const [userCount, setUserCount] = useState(0);
+//   const [orderCount, setOrderCount] = useState(0);
+//   const [productCount, setProductCount] = useState(0);
+//   const [contactCount, setContactCount] = useState(0);
+
+//   useEffect(() => {
+//     // Fetch user count
+//     const fetchUsers = async () => {
+//       try {
+//         const response = await axios.get('http://localhost:5002/api/users/');
+//         setUserCount(response.data.length);
+//       } catch (error) {
+//         console.error('Error fetching users:', error);
+//       }
+//     };
+
+//     // Fetch order count
+//     const fetchOrders = async () => {
+//       try {
+//         const response = await axios.get('http://localhost:5002/api/order/');
+//         setOrderCount(response.data.length);
+//       } catch (error) {
+//         console.error('Error fetching orders:', error);
+//       }
+//     };
+
+//     // Fetch product count
+//     const fetchProducts = async () => {
+//       try {
+//         const response = await axios.get('http://localhost:5002/api/products');
+//         setProductCount(response.data.length);
+//       } catch (error) {
+//         console.error('Error fetching products:', error);
+//       }
+//     };
+
+//     // Fetch contact count
+//     const fetchContacts = async () => {
+//       try {
+//         const response = await axios.get('http://localhost:5002/api/contacts/fetch');
+//         setContactCount(response.data.length);
+//       } catch (error) {
+//         console.error('Error fetching contacts:', error);
+//       }
+//     };
+
+//     // Call fetch functions
+//     fetchUsers();
+//     fetchOrders();
+//     fetchProducts();
+//     fetchContacts();
+//   }, []);
 
 //   const navItems = [
 //     { id: 'dashboard', label: 'Dashboard', icon: FaTachometerAlt },
@@ -21,33 +80,32 @@
 //   ];
 
 //   const stats = [
-//     { label: 'Total Users', value: Users.length || 0, icon: FaUsers },
-//     { label: 'Total Orders', value: Orders.length || 0, icon: FaShoppingCart },
-//     { label: 'Total Products', value: Product.length || 0, icon: FaBox },
-//     { label: 'Total Contacts', value: ContactUs.length || 0, icon: FaEnvelope },
+//     { label: 'Total Users', value: userCount, icon: FaUsers },
+//     { label: 'Total Orders', value: orderCount, icon: FaShoppingCart },
+//     { label: 'Total Products', value: productCount, icon: FaBox },
+//     { label: 'Total Contacts', value: contactCount, icon: FaEnvelope },
 //   ];
 
 //   const styles = {
 //     container: {
 //       display: 'flex',
 //       minHeight: '100vh',
-//       backgroundColor: '#EDE9A3',
+//       // backgroundColor: '#A28B55',
 //       fontFamily: 'Arial, sans-serif',
+//       paddingTop:'60px'
 //     },
 //     sidebar: {
 //       width: '250px',
-//       backgroundColor: '#1B8057',
-//       color: '#EDE9A3',
-//       padding: '44px',
+//       backgroundColor: '#4CAF50',
+//       color: '#fff',
+//       padding: '40px',
 //       boxShadow: '2px 0 10px rgba(0, 0, 0, 0.1)',
-//       transition: 'all 0.3s ease',
 //     },
 //     sidebarTitle: {
-//       marginBottom: '30px',
 //       fontSize: '1.8rem',
 //       fontWeight: 'bold',
 //       textAlign: 'center',
-//       textShadow: '2px 2px 4px rgba(0, 0, 0, 0.2)',
+//       marginBottom: '30px',
 //     },
 //     navList: {
 //       listStyleType: 'none',
@@ -55,10 +113,9 @@
 //     },
 //     navItem: {
 //       marginBottom: '15px',
-//       transition: 'all 0.3s ease',
 //     },
 //     navLink: {
-//       color: '#EDE9A3',
+//       color: '#fff',
 //       textDecoration: 'none',
 //       display: 'flex',
 //       alignItems: 'center',
@@ -67,55 +124,46 @@
 //       transition: 'all 0.3s ease',
 //     },
 //     activeNavLink: {
-//       backgroundColor: '#55A44E',
-//       color: '#EDE9A3',
+//       backgroundColor: '#A28B55',
 //       transform: 'translateX(10px)',
 //     },
 //     navIcon: {
-//       marginRight: '15px',
-//       fontSize: '1.2rem',
+//       marginRight: '10px',
 //     },
 //     content: {
 //       flexGrow: 1,
-//       padding: '80px',
-//       // backgroundColor: '#FFFFFF',
-//       borderRadius: '20px',
+//       padding: '40px',
+//       borderRadius: '10px',
 //       margin: '20px',
 //       boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)',
 //     },
 //     contentTitle: {
-//       color: '#1B8057',
+//       color: '#65451F',
 //       marginBottom: '30px',
 //       fontSize: '2.5rem',
 //       fontWeight: 'bold',
 //       textAlign: 'center',
-//       textShadow: '2px 2px 4px rgba(0, 0, 0, 0.1)',
 //     },
 //     statsGrid: {
 //       display: 'grid',
-//       gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-//       gap: '30px',
+//       gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+//       gap: '20px',
 //     },
 //     statCard: {
-//       backgroundColor: '#55A44E',
-//       padding: '25px',
-//       borderRadius: '15px',
-//       color: '#EDE9A3',
+//       backgroundColor: '#4CAF50',
+//       padding: '20px',
+//       borderRadius: '10px',
+//       color: '#fff',
 //       boxShadow: '0 4px 15px rgba(0, 0, 0, 0.1)',
-//       transition: 'all 0.3s ease',
-//       ':hover': {
-//         transform: 'translateY(-10px)',
-//         boxShadow: '0 6px 20px rgba(0, 0, 0, 0.15)',
-//       },
+//       textAlign: 'center',
 //     },
 //     statHeader: {
 //       display: 'flex',
 //       justifyContent: 'space-between',
 //       alignItems: 'center',
-//       marginBottom: '15px',
+//       marginBottom: '10px',
 //     },
 //     statLabel: {
-//       margin: 0,
 //       fontSize: '1.2rem',
 //       fontWeight: 'bold',
 //     },
@@ -123,10 +171,8 @@
 //       fontSize: '2rem',
 //     },
 //     statValue: {
-//       margin: 0,
-//       fontSize: '2.5rem',
+//       fontSize: '2rem',
 //       fontWeight: 'bold',
-//       textAlign: 'center',
 //     },
 //   };
 
@@ -171,6 +217,11 @@
 //             ))}
 //           </div>
 //         )}
+
+// <AuthProvider>
+// <CartProvider>
+// <ScrollToTop />
+// <Navbar />
 //         <Routes>
 //           <Route path="users" element={<Users />} />
 //           <Route path="orders" element={<Orders />} />
@@ -178,24 +229,32 @@
 //           <Route path="contactUs" element={<ContactUs />} />
 //           <Route path="payment" element={<Payment />} />
 //         </Routes>
+//         </CartProvider>
+//         </AuthProvider>
 //       </div>
 //     </div>
 //   );
-// }
+// };
 
 // export default AdminDashboard;
 
+
 import React, { useState, useEffect } from 'react';
-import { Routes, Route, Link } from 'react-router-dom';
-import { FaUsers, FaShoppingCart, FaBox, FaEnvelope, FaTachometerAlt, FaDollarSign } from 'react-icons/fa';
-import axios from 'axios';  // Ensure axios is set up to connect to your backend
+import { Routes, Route, Link, useNavigate } from 'react-router-dom';
+import { FaUsers, FaShoppingCart, FaBox, FaEnvelope, FaTachometerAlt, FaDollarSign, FaSignOutAlt } from 'react-icons/fa';
+import axios from 'axios';  
 import Users from '../components/users.js';
 import Orders from '../components/Ordersmanagement.js';
 import Product from '../components/ProductManagement.js';
 import ContactUs from '../components/ContactUsManage.js';
 import Payment from '../components/payments Manage.js';
+import Navbar from '../components/Navbar.js';
+import { AuthProvider } from '../context/AuthContext.js';
+import { CartProvider } from '../context/cartcontextprovider';
+import ScrollToTop from './ScrollToTop.js';
 
 const AdminDashboard = ({ isAdmin = true }) => {
+  const navigate = useNavigate();  // Hook to navigate to another route
   const [activeTab, setActiveTab] = useState('dashboard');
   const [userCount, setUserCount] = useState(0);
   const [orderCount, setOrderCount] = useState(0);
@@ -270,13 +329,13 @@ const AdminDashboard = ({ isAdmin = true }) => {
     container: {
       display: 'flex',
       minHeight: '100vh',
-      // backgroundColor: '#A28B55',
       fontFamily: 'Arial, sans-serif',
+      paddingTop:'60px'
     },
     sidebar: {
       width: '250px',
-      backgroundColor: '#765827',
-      color: '#EDE9A3',
+      backgroundColor: '#4CAF50',
+      color: '#fff',
       padding: '40px',
       boxShadow: '2px 0 10px rgba(0, 0, 0, 0.1)',
     },
@@ -294,7 +353,7 @@ const AdminDashboard = ({ isAdmin = true }) => {
       marginBottom: '15px',
     },
     navLink: {
-      color: '#EDE9A3',
+      color: '#fff',
       textDecoration: 'none',
       display: 'flex',
       alignItems: 'center',
@@ -329,10 +388,10 @@ const AdminDashboard = ({ isAdmin = true }) => {
       gap: '20px',
     },
     statCard: {
-      backgroundColor: '#765827',
+      backgroundColor: '#4CAF50',
       padding: '20px',
       borderRadius: '10px',
-      color: '#EDE9A3',
+      color: '#fff',
       boxShadow: '0 4px 15px rgba(0, 0, 0, 0.1)',
       textAlign: 'center',
     },
@@ -353,6 +412,12 @@ const AdminDashboard = ({ isAdmin = true }) => {
       fontSize: '2rem',
       fontWeight: 'bold',
     },
+  };
+
+  const handleLogout = () => {
+    // Clear sessionStorage or other authentication state
+    sessionStorage.clear(); // Example of clearing session storage
+    navigate('/login');  // Redirect to login page after logout
   };
 
   return (
@@ -377,6 +442,17 @@ const AdminDashboard = ({ isAdmin = true }) => {
               </li>
             ))}
           </ul>
+          <button
+            onClick={handleLogout}
+            style={{
+              ...styles.navLink,
+              marginTop: '20px',
+              backgroundColor: '#65451F',  // Example logout button color
+            }}
+          >
+            <FaSignOutAlt style={styles.navIcon} />
+            Logout
+          </button>
         </nav>
       </div>
       <div style={styles.content}>
@@ -396,16 +472,24 @@ const AdminDashboard = ({ isAdmin = true }) => {
             ))}
           </div>
         )}
-        <Routes>
-          <Route path="users" element={<Users />} />
-          <Route path="orders" element={<Orders />} />
-          <Route path="product" element={<Product />} />
-          <Route path="contactUs" element={<ContactUs />} />
-          <Route path="payment" element={<Payment />} />
-        </Routes>
+
+        <AuthProvider>
+          <CartProvider>
+            <ScrollToTop />
+            <Navbar />
+            <Routes>
+              <Route path="users" element={<Users />} />
+              <Route path="orders" element={<Orders />} />
+              <Route path="product" element={<Product />} />
+              <Route path="contactUs" element={<ContactUs />} />
+              <Route path="payment" element={<Payment />} />
+            </Routes>
+          </CartProvider>
+        </AuthProvider>
       </div>
     </div>
   );
 };
 
 export default AdminDashboard;
+

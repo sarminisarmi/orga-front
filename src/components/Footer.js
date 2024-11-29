@@ -172,8 +172,8 @@ import { FaTwitter, FaFacebookF, FaInstagram, FaLinkedinIn, FaMapMarkerAlt, FaPh
 const Footer = () => {
   const styles = {
     footer: {
-      backgroundColor: '#65451F',
-      color: '#EDE9A3',
+      backgroundColor: '#4CAF50',
+      color: '#fff',
       padding: '3rem 0',
       fontFamily: 'Arial, sans-serif',
     },
@@ -191,24 +191,30 @@ const Footer = () => {
       animation: 'fadeIn 0.5s ease-in-out',
     },
     heading: {
-      fontSize: '1.5rem',
+      fontSize: '1.8rem',
       fontWeight: 'bold',
       marginBottom: '1rem',
       color: '#ffff',
     },
     text: {
-      marginBottom: '0.5rem',
+      marginBottom: '1.5rem',
       display: 'flex',
       alignItems: 'center',
       color:'#ffff',
+      fontSize: '1.2rem',
+
     },
     icon: {
       marginRight: '0.5rem',
-      color: '#FFDC7F',
+      color: '#765827',
+      fontSize: '1.3rem',
+
     },
     list: {
       listStyle: 'none',
       padding: 0,
+      fontSize: '1.2rem',
+
     },
     listItem: {
       marginBottom: '0.5rem',
@@ -219,8 +225,8 @@ const Footer = () => {
       transition: 'color 0.3s ease',
     },
     bottom: {
-      borderTop: '1px solid #55A44E',
-      marginTop: '2rem',
+      borderTop: '1px solid #fff',
+      marginTop: '3rem',
       paddingTop: '1rem',
       display: 'flex',
       justifyContent: 'space-between',
@@ -232,7 +238,7 @@ const Footer = () => {
       gap: '1rem',
     },
     socialIcon: {
-      backgroundColor: '#FFDC7F',
+      backgroundColor: '#fff',
       color: '#765827',
       width: '40px',
       height: '40px',
@@ -240,7 +246,7 @@ const Footer = () => {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      fontSize: '1.2rem',
+      fontSize: '1.6rem',
       transition: 'all 0.3s ease',
     },
   };
@@ -275,8 +281,8 @@ const Footer = () => {
 
           <div style={styles.section}>
             <h4 style={styles.heading}>Newsletter</h4>
-            <p>Stay updated with our latest news and offers!</p>
-            <form style={{ marginTop: '1rem' }}>
+            <p style={{ marginTop: '1rem', fontSize: '1.2rem'}}>Stay updated with our latest news and offers!</p>
+            <form style={{ marginTop: '2rem', fontSize: '1.5rem'}}>
               <input
                 type="email"
                 placeholder="Enter your email"
@@ -291,13 +297,14 @@ const Footer = () => {
               <button
                 type="submit"
                 style={{
-                  backgroundColor: '#FFDC7F',
-                  color: '#765827',
-                  border: '2px solid #765827',
+                  backgroundColor: '#4CAF50',
+                  color: '#fff',
+                  border: '2px solid #388E3C',
                   padding: '0.5rem 1rem',
                   borderRadius: '4px',
                   cursor: 'pointer',
                   transition: 'background-color 0.3s ease',
+                  fontSize: '1rem'
                 }}
               >
                 Subscribe
@@ -307,7 +314,7 @@ const Footer = () => {
         </div>
 
         <div style={styles.bottom}>
-          <p>&copy; 2024 Orga. Shop responsibly!</p>
+          <p style={{ marginTop: '2rem', fontSize: '1.5rem'}}>&copy; 2024 Orga. Shop responsibly!</p>
           <div style={styles.socialLinks}>
             <a href="#" style={styles.socialIcon}><FaTwitter /></a>
             <a href="#" style={styles.socialIcon}><FaFacebookF /></a>

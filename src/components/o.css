@@ -25,7 +25,7 @@
   .order-summary p {
     font-size: 1.2rem;
     font-weight: bold;
-    color: #333;
+    color: #765827;
   }
   
   .order-form {
@@ -63,18 +63,19 @@
   .confirm-button {
     width: 100%;
     padding: 0.75rem;
-    font-size: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
     color: #fff;
-    background-color:#1B8057;
-    border: none;
+    background-color:#F09319;
+    border: 2px  solid #481E14;
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.2s;
   }
   
-  .confirm-button:hover {
+  /* .confirm-button:hover {
     background-color: green;
-  }
+  } */
   
   .confirm-button:disabled {
     background-color: #aaa;

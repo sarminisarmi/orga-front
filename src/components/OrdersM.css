@@ -9,7 +9,6 @@
   table {
     width: 100%;
     border-collapse: collapse;
-    
     margin-top: 20px;
   }
   
@@ -17,10 +16,11 @@
     padding: 12px;
     text-align: left;
     border: 1px solid #ddd;
+    font-size: 20px;
   }
   
   th {
-    background-color: #A28B55;
+    background-color: #4CAF50;
     color: white;
   }
   
@@ -33,10 +33,10 @@
   }
   
   button {
-     background-color: #FFDC7F; 
-     color: #765827;
+     background-color: #4CAF50; 
+     color: #fff;
     padding: 10px 15px;
-    border:2px solid var(--color);
+    border: 2px solid #481E14;
     cursor: pointer;
     border-radius: 6px;
     font-weight: bold;
