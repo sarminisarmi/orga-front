@@ -4,7 +4,7 @@
 // import { TextField, Button, Box, Typography, Container, Paper } from '@mui/material';
 // import { FaUserPlus } from 'react-icons/fa';
 // import 'bootstrap/dist/css/bootstrap.min.css';
-// import backgroundImage from '/home/uki-jaffna/Documents/orga3/my-orga-frontend/src/img/pexels-eva-bronzini-6261872.jpg';
+// import backgroundImage from '../../src/img/pexels-eva-bronzini-6261872.jpg';
 // const RegisterPage = () => {
 //   const [username, setUsername] = useState('');
 //   const [email, setEmail] = useState('');
@@ -167,7 +167,7 @@
 // import { TextField, Button, Box, Typography, Container, Paper } from '@mui/material';
 // import { FaUserPlus } from 'react-icons/fa';
 // import 'bootstrap/dist/css/bootstrap.min.css';
-// import backgroundImage from '/home/uki-jaffna/Documents/orga3/my-orga-frontend/src/img/pexels-eva-bronzini-6261872.jpg';
+// import backgroundImage from '../../src/img/pexels-eva-bronzini-6261872.jpg';
 
 // const RegisterPage = () => {
 //   const [username, setUsername] = useState('');
