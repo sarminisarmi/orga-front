@@ -271,11 +271,11 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FaSeedling, FaLeaf, FaRecycle, FaShoppingBasket } from 'react-icons/fa';
-import hero3 from '/home/uki-jaffna/Documents/orga3/my-orga-frontend/src/img/hero14.jpeg';
-import hero6 from '/home/uki-jaffna/Documents/orga3/my-orga-frontend/src/img/img1.jpg';
-import hero7 from '/home/uki-jaffna/Documents/orga3/my-orga-frontend/src/img/Nature Of Life.jpeg';
-import hero8 from '/home/uki-jaffna/Documents/orga3/my-orga-frontend/src/img/hero4.jpeg';
-import hero9 from '/home/uki-jaffna/Documents/orga3/my-orga-frontend/src/img/hero3.jpg';
+import hero3 from '../../src/img/hero14.jpeg';
+import hero6 from '../../src/img/img1.jpg';
+import hero7 from '../../src/img/Nature Of Life.jpeg';
+import hero8 from '../../src/img/hero4.jpeg';
+import hero9 from '../../src/img/hero3.jpg';
 import Herosection from './Herosection';
 import Aboutpage from "./AboutPage";
 import Contactus from "./ContactUs";

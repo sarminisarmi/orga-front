@@ -151,7 +151,7 @@ import { FaShoppingCart, FaBars, FaTimes, FaHome, FaUser, FaEnvelope, FaBoxOpen,
 import { Navbar, Nav, Button } from 'react-bootstrap';
 import { useCart } from '../context/cartcontextprovider';
 import { AuthContext } from '../context/AuthContext';
-import logo from '/home/uki-jaffna/Documents/orga3/my-orga-frontend/src/img/ORGA.png';
+import logo from '../../src/img/ORGA.png';
 
 const CustomNavbar = () => {
   const { cart, setCart } = useCart();

@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import axios from '../utils/axios'; // Adjust the path according to your project
 import { AuthContext } from '../context/AuthContext'; // Adjust the path for your AuthContext
-import '/home/uki-jaffna/Documents/orga3/my-orga-frontend/src/components/Login Page.css'; // Ensure the correct path to your CSS file
+import '../../src/components/Login Page.css'; // Ensure the correct path to your CSS file
 import { ToastContainer, toast } from 'react-toastify'; // Import ToastContainer and toast
 import 'react-toastify/dist/ReactToastify.css'; // Import Toastify CSS
 

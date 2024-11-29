@@ -425,7 +425,7 @@
 
 import React, { useState } from 'react';
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
-import bindweedImage from '/home/uki-jaffna/Documents/orga3/my-orga-frontend/src/img/hero17.webp';
+import bindweedImage from '../../src/img/hero17.webp';
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
